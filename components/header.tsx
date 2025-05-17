@@ -3,7 +3,6 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ConnectWallet } from "@/components/connect-wallet"
 import { Menu, X, Users, Wallet } from "lucide-react"
 import { useMobile } from "@/hooks/use-mobile"
 
@@ -24,7 +23,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-sm">
+    <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-sm">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-2">
@@ -59,15 +58,11 @@ export default function Header() {
                   <Users className="h-5 w-5" />
                 </Button>
               </Link>
-              <ConnectWallet />
             </>
           ) : (
-            <>
-              <ConnectWallet />
-              <Button variant="ghost" size="icon" onClick={toggleMenu} className="text-blue-600">
-                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
-            </>
+            <Button variant="ghost" size="icon" onClick={toggleMenu} className="text-blue-600">
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
           )}
         </div>
       </div>
