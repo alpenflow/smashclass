@@ -111,12 +111,10 @@ export default function ClassesPage() {
   ]
 
   return (
-    <div className="container py-8">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight mb-2">Find Classes</h1>
-          <p className="text-muted-foreground">Book empty spaces in upcoming classes using ClassCoins</p>
-        </div>
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="mb-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center md:text-left">Find Classes</h1>
+        <p className="text-muted-foreground text-center md:text-left">Book empty spaces in upcoming classes using ClassCoins</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
