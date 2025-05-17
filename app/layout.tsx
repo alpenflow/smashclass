@@ -1,20 +1,31 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Web3Provider } from "@/components/web3-provider"
-import { FarcasterProvider } from "@/components/social/farcaster-provider"
-import { CoinbaseWalletProvider } from "@/components/wallet/coinbase-wallet-provider"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
+import '@coinbase/onchainkit/styles.css'
+import type { Metadata } from 'next'
+import './globals.css'
+import { MiniKitContextProvider } from './providers/minikit-provider'
 
-const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "SmashClass - Web3 Fitness & Wellness Marketplace",
-  description: "Book fitness classes and wellness services using ClassCoins",
-    generator: 'v0.dev'
+export const generateMetadata = (): Metadata => {
+  const URL = process.env.NEXT_PUBLIC_URL
+  return {
+    title: process.env.NEXT_PUBLIC_ONCHAINKIT_PROJECT_NAME || "SmashClass",
+    description: process.env.NEXT_PUBLIC_APP_DESCRIPTION || "Web3 Fitness & Wellness Marketplace",
+    other: {
+      'fc:frame': JSON.stringify({
+        version: "next",
+        imageUrl: process.env.NEXT_PUBLIC_APP_HERO_IMAGE,
+        button: {
+          title: `Launch ${process.env.NEXT_PUBLIC_ONCHAINKIT_PROJECT_NAME || "SmashClass"}`,
+          action: {
+            type: 'launch_frame',
+            name: process.env.NEXT_PUBLIC_ONCHAINKIT_PROJECT_NAME || "SmashClass",
+            url: URL,
+            splashImageUrl: process.env.NEXT_PUBLIC_APP_SPLASH_IMAGE,
+            splashBackgroundColor: process.env.NEXT_PUBLIC_SPLASH_BACKGROUND_COLOR,
+          },
+        },
+      }),
+    },
+  }
 }
 
 export default function RootLayout({
@@ -23,21 +34,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <Web3Provider>
-            <CoinbaseWalletProvider>
-              <FarcasterProvider>
-                <div className="flex min-h-screen flex-col">
-                  <Header />
-                  <main className="flex-1">{children}</main>
-                  <Footer />
-                </div>
-              </FarcasterProvider>
-            </CoinbaseWalletProvider>
-          </Web3Provider>
-        </ThemeProvider>
+    <html lang="en" className="scroll-smooth">
+      <body className="antialiased">
+        <MiniKitContextProvider>{children}</MiniKitContextProvider>
       </body>
     </html>
   )
