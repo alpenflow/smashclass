@@ -128,10 +128,10 @@ export default function TrainersPage() {
   ]
 
   return (
-    <div className="container py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold tracking-tight mb-2">Personal Trainers</h1>
-        <p className="text-gray-600">Book one-on-one sessions with expert trainers and earn rewards</p>
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="mb-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center md:text-left">Personal Trainers</h1>
+        <p className="text-gray-600 text-center md:text-left">Book one-on-one sessions with expert trainers and earn rewards</p>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">

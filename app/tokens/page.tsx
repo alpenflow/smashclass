@@ -58,10 +58,10 @@ export default function TokensPage() {
   ]
 
   return (
-    <div className="container py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">SmashClass Token Ecosystem</h1>
-        <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="mb-12">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 text-center md:text-left">SmashClass Token Ecosystem</h1>
+        <p className="text-xl text-muted-foreground max-w-[800px] mx-auto text-center md:text-left">
           Our three-token system creates a balanced ecosystem for users, studios, and governance.
         </p>
       </div>

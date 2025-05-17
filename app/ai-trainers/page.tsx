@@ -138,10 +138,10 @@ export default function AITrainersPage() {
   ]
 
   return (
-    <div className="container py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold tracking-tight mb-2">AI Trainers</h1>
-        <p className="text-gray-600">Get personalized fitness and wellness advice powered by AI</p>
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="mb-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center md:text-left">AI Trainers</h1>
+        <p className="text-gray-600 text-center md:text-left">Get personalized fitness and wellness advice powered by AI</p>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">
