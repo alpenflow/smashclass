@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { MapPin, Calendar, Clock, Coins, Search, Filter } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { AppHeader } from "@/components/app-header"
 
 export default function ClassesPage() {
   // Mock data for classes
@@ -112,6 +113,7 @@ export default function ClassesPage() {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <AppHeader />
       <div className="mb-8">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center md:text-left">Find Classes</h1>
         <p className="text-muted-foreground text-center md:text-left">Book empty spaces in upcoming classes using ClassCoins</p>

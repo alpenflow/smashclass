@@ -11,6 +11,7 @@ import { useFarcaster } from "@/components/social/farcaster-provider"
 import { Loader2, Search, UserPlus, Trophy, MapPin, ThumbsUp, MessageSquare, Share2 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { AppHeader } from "@/components/app-header"
 
 export default function SocialPage() {
   const { isConnected, user, friends, connect, disconnect, isLoading } = useFarcaster()
@@ -123,6 +124,7 @@ export default function SocialPage() {
   if (!isConnected) {
     return (
       <div className="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <AppHeader />
         <div className="max-w-md mx-auto text-center">
           <div className="mb-6">
             <Image src="/farcaster-logo.png" alt="Farcaster Social" width={150} height={150} className="mx-auto" />
@@ -153,6 +155,7 @@ export default function SocialPage() {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <AppHeader />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left sidebar - User profile */}
         <div className="space-y-6">

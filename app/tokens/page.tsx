@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ArrowRight, Coins, Award, Shield } from "lucide-react"
+import { AppHeader } from "@/components/app-header"
 
 export default function TokensPage() {
   const tokens = [
@@ -59,6 +60,7 @@ export default function TokensPage() {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <AppHeader />
       <div className="mb-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 text-center md:text-left">SmashClass Token Ecosystem</h1>
         <p className="text-xl text-muted-foreground max-w-[800px] mx-auto text-center md:text-left">
